@@ -11,10 +11,22 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Sistema Administrador de Proyectos</title>
          <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/journal/bootstrap.min.css" rel="stylesheet" integrity="sha384-1L94saFXWAvEw88RkpRz8r28eQMvt7kG9ux3DdCqya/P3CfLNtgqzMnyaUa49Pl2" crossorigin="anonymous">
+         <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css">
     </head>
     <body>
+    <header class="header">
+<nav class="menu">
+
+    </nav>
+        
+    </header><!-- .header-->
+    <div class="wrapper">
+
+    
+    <div id="top">
+        <div id="top2">
 
         <h1>Iniciar sesión</h1>
         <form method="POST" action="/Dahood/iniciarsesion">
@@ -38,5 +50,9 @@
             />
             <input name="submit" type="submit" value="Iniciar sesión"/>
         </form>
+        </div>
+        </div>
+        </div>
+
     </body>
 </html>
