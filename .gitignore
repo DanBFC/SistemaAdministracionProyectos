@@ -1,6 +1,6 @@
 nbproject/private/
 
-build/*
+build/
 !build/web/
 
 build/web/*
