@@ -10,7 +10,7 @@
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
        http://www.springframework.org/schema/security
-       http://www.springframework.org/schema/security/spring-security-4.1.xsd">
+       http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 
     <bean id="propertyConfigurer"
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -57,17 +57,17 @@
     <security:http pattern="/imagenes/*" security="none"/>
     <security:http pattern="/js/*" security="none"/>   
     
-    <security:http>
+    <security:http use-expressions="true">
         <security:intercept-url pattern="/" access="permitAll"/>
         <security:intercept-url pattern="/principal/**" access="hasRole('ROLE_USUARIO')" />
         
-        <security:form-login login-page="/iniciarsesion"
+        <security:form-login login-page="/"
                              default-target-url="/principal"
                              login-processing-url="/iniciarsesion"
                              password-parameter="contrasena"
                              username-parameter="usuario"
                              />
-        <security:csrf disabled="true"/>
+        
     </security:http> 
      <security:authentication-manager alias="authenticationManager">
         <security:authentication-provider user-service-ref="UserModel" />

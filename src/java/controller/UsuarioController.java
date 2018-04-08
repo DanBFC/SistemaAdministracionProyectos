@@ -20,9 +20,11 @@ import org.springframework.ui.Model;
  * @author daniel
  */
 @Controller
-public class UsuarioController {
+public class UsuarioController{
+    
     @RequestMapping(value="/", method = RequestMethod.GET)
     public String mostrarPantallaInicioSesion(){
+       System.out.println("Lámeme la panocha, puta");
        return "PantallaInicioSesion";
     }
     
