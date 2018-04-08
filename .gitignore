@@ -1,13 +1,13 @@
 nbproject/private/
 
-build/
+build/*
 !build/web/
 
 build/web/*
 !build/web/WEB-INF/
 
 build/web/WEB-INF/
-!build/web/WEB-INF/lib
+!build/web/WEB-INF/lib/
 
 nbbuild/
 dist/
