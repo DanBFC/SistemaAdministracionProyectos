@@ -1,14 +1,6 @@
 nbproject/private/
 
-/build/*
-!/build/web
-
-/build/web/*
-!/build/web/WEB-INF
-
-/build/web/WEB-INF/*
-!/build/web/WEB-INF/lib
-
+build/
 nbbuild/
 dist/
 nbdist/
