@@ -59,7 +59,7 @@
                                         </a>
                                     </li>
                                     <li><a class="nav-link"
-                                           href="/SistemaAdministracionProyectos/home/verUsuarios">Ver todos los Proyectos
+                                           href="/SistemaAdministracionProyectos/home/verUsuarios">Ver todos los Usuarios
                                         </a>
                                     </li>
                                 </sec:authorize>

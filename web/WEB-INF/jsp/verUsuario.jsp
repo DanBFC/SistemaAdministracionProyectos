@@ -46,7 +46,7 @@
                                 <td>
                                     <div id="top">
                                         <div id="top2">
-                                            <p class="titulos">Proyecto ${usuario.getID}</p>
+                                            <p class="titulos">Usuario ${usuario.getID()}</p>
                                             <form>
                                                 <ul>                                                                                                                
                                                     <li>Nombre: <input type="text" name="nombre" value ="${p.getNombre()}" readonly></li>                                                    
