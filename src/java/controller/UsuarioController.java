@@ -5,11 +5,13 @@
  */
 package controller;
 
+import entity.Usuario;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.UserModel;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
@@ -50,5 +52,26 @@ public class UsuarioController{
     public String PantallaAgregarUsuario(){
         return "agregarUsuario";
     }
+    
+    @RequestMapping(value = "home/agregarUsuario", method = RequestMethod.POST)
+    public String crearUsuario(HttpServletRequest request, Model m){
+        String nombre = request.getParameter("nombre");
+        String contrasena = request.getParameter("password");
+        String rol = request.getParameter("rol");
 
+        UserModel usuarioDB = new UserModel();
+        
+        Usuario nuevoUsuario; 
+        nuevoUsuario = usuarioDB.getUsuarioByName(nombre);
+        
+        if(nuevoUsuario == null){
+            nuevoUsuario = new Usuario();
+            nuevoUsuario.setNombre(nombre);
+            nuevoUsuario.setContrasena(contrasena);
+            nuevoUsuario.setRol(rol);
+            usuarioDB.crearUsuario(nuevoUsuario);
+        }
+        m.addAttribute("u", nuevoUsuario);
+        return "home";
+    }
  }

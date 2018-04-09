@@ -38,7 +38,7 @@ public class UserModel implements UserDetailsService {
     }
     
     public Usuario crearUsuario(Usuario usuario){
-        Session sesion = sessionFactory.openSession();
+        Session sesion = HibernateUtil.getSessionFactory().openSession();
         try {
             sesion.beginTransaction();
             sesion.save(usuario);
@@ -55,7 +55,7 @@ public class UserModel implements UserDetailsService {
     
     public List<Usuario> obtenerUsuarios(){
         List<Usuario> lst = new ArrayList<>();
-        Session sesion = sessionFactory.openSession();
+        Session sesion = HibernateUtil.getSessionFactory().openSession();
         
         try {
             sesion.beginTransaction();
@@ -72,7 +72,7 @@ public class UserModel implements UserDetailsService {
     }
     
     public Usuario actualizarUsuario(Usuario usuario){
-        Session sesion = sessionFactory.openSession();
+        Session sesion = HibernateUtil.getSessionFactory().openSession();
         try {
             sesion.beginTransaction();
             sesion.update(usuario);
@@ -89,7 +89,7 @@ public class UserModel implements UserDetailsService {
     
     public Usuario buscarUsuarioID(int id){
         Usuario usuario;
-        Session sesion = sessionFactory.openSession();
+        Session sesion = HibernateUtil.getSessionFactory().openSession();
         
         try {
             sesion.beginTransaction();
@@ -104,7 +104,7 @@ public class UserModel implements UserDetailsService {
     }
     
     public Usuario eliminarUsuario(Usuario usuario){
-        Session sesion = sessionFactory.openSession();
+        Session sesion = HibernateUtil.getSessionFactory().openSession();
         try {
             sesion.beginTransaction();
             sesion.delete(usuario);
@@ -120,7 +120,7 @@ public class UserModel implements UserDetailsService {
     
     public Usuario getUsuarioByName(String nombre){
         Usuario usuario = null;
-        Session sesion = sessionFactory.openSession();
+        Session sesion = HibernateUtil.getSessionFactory().openSession();
         Transaction t = null;
         try{
             t = sesion.beginTransaction();
