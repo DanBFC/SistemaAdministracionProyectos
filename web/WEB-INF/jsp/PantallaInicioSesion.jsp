@@ -17,7 +17,7 @@
     <body>
 
         <h1>Iniciar sesión</h1>
-        <form method="POST" action="/Dahood/iniciarsesion">
+        <form method="POST" action="/SistemaAdministracionProyectos/iniciarsesion">
             <c:if test="${param.error != null}">
                 <div class = "alert alert-danger">
                    Nombre o contraseña incorrectos.

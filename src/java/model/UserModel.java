@@ -149,7 +149,7 @@ public class UserModel implements UserDetailsService {
             List<GrantedAuthority> autorizaciones = 
                     new ArrayList<>();
             autorizaciones.add(new SimpleGrantedAuthority("ROLE_" + 
-                    usuario.getRol()));
+                    usuario.getRol().toUpperCase()));
             return new User(usuario.getNombre(), 
                             usuario.getContrasena(),
                             autorizaciones);

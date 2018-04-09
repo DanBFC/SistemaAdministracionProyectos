@@ -58,14 +58,18 @@
     <security:http pattern="/js/*" security="none"/>   
     
     <security:http use-expressions="true">
+        <security:intercept-url pattern="/home/agregarUsuario/**" access="hasRole('ROLE_ADMINISTRADOR')" />
+        <security:intercept-url pattern="/home/**" access="hasAnyRole('ROLE_USUARIO','ROLE_ADMINISTRADOR','ROLE_ANALISTA')"/>
         <security:intercept-url pattern="/" access="permitAll"/>
-        <security:intercept-url pattern="/principal/**" access="hasRole('ROLE_USUARIO')" />
-        
+  
+        <!--security:logout logout-url="/home/salir" logout-success-url="/?salir"/-->
+        <security:headers />
         <security:form-login login-page="/"
-                             default-target-url="/principal"
+                             default-target-url="/home"
                              login-processing-url="/iniciarsesion"
                              password-parameter="contrasena"
                              username-parameter="usuario"
+                             authentication-failure-url="/?error"
                              />
         
     </security:http> 

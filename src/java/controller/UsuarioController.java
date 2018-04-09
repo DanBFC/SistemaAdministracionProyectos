@@ -13,8 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.ui.Model;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 /**
  *
  * @author daniel
@@ -24,24 +25,34 @@ public class UsuarioController{
     
     @RequestMapping(value="/", method = RequestMethod.GET)
     public String mostrarPantallaInicioSesion(){
-       System.out.println("Lámeme la panocha, puta");
        return "PantallaInicioSesion";
     }
     
-    @RequestMapping(value="/principal", method = RequestMethod.GET)
+    @RequestMapping(value="/home", method = RequestMethod.GET)
     public String mostrarPantallaPrincipal(){
-        return "PantallaPrincipal";
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        System.out.println(auth.toString());
+
+        return "home";
     }
     
-    @RequestMapping(value="principal/salir", method = RequestMethod.GET)
+
+    @RequestMapping(value="/home/salir", method = RequestMethod.GET)
     public String salir (HttpServletRequest request, 
-            HttpServletResponse response){
-        Authentication auth = SecurityContextHolder.getContext().
-                getAuthentication();
-        
+            HttpServletResponse response, RedirectAttributes model){
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        System.out.println(auth.toString());
         if(auth != null){
+            System.out.println("Estoy loggeado");
+            model.addFlashAttribute("exito", "Ha salido de su perfil exitosamente");
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
-    return "redirect:/iniciarsesion?salir";
+    return "redirect:/?salir";
     }
-}
+    
+    @RequestMapping(value="/home/agregarUsuario", method = RequestMethod.GET)
+    public String PantallaAgregarUsuario(){
+        return "agregarUsuario";
+    }
+        
+ }
