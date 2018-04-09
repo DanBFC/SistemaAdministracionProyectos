@@ -37,7 +37,7 @@
         
         </ul>
         
-        <br><textarea name="descripcion" rows="3" cols="40">DescripciÃ³n del proyecto</textarea>
+        <br><textarea name="descripcion" rows="3" cols="40">Descripción del proyecto</textarea>
         
         <input type="submit" value="Agregar">
         </form>

@@ -30,9 +30,6 @@ public class UsuarioController{
     
     @RequestMapping(value="/home", method = RequestMethod.GET)
     public String mostrarPantallaPrincipal(){
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        System.out.println(auth.toString());
-
         return "home";
     }
     
@@ -40,10 +37,9 @@ public class UsuarioController{
     @RequestMapping(value="/home/salir", method = RequestMethod.GET)
     public String salir (HttpServletRequest request, 
             HttpServletResponse response, RedirectAttributes model){
+        
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        System.out.println(auth.toString());
         if(auth != null){
-            System.out.println("Estoy loggeado");
             model.addFlashAttribute("exito", "Ha salido de su perfil exitosamente");
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
@@ -55,4 +51,8 @@ public class UsuarioController{
         return "agregarUsuario";
     }
         
+    @RequestMapping(value="home/agregarProyecto", method = RequestMethod.GET)
+    public String PantallaAgregarProyect(){
+        return "agregarProyecto";
+    }
  }

@@ -34,7 +34,12 @@
                     <form>
                         <ul>
                             <li>Buscar un Proyecto <input type="text" name="firstname"></li>
-                            <li><a href="agregar.jsp">Agregar Proyecto</a></li>
+                                <sec:authorize access="hasRole('ROLE_ADMINISTRADOR')">
+                                    <li><a class="nav-link" 
+                                           href="/SistemaAdministracionProyectos/home/agregarProyecto">Agregar proyecto
+                                        </a>
+                                    </li>
+                                </sec:authorize>
                             <li><a href="busqueda.jsp">Ver todos los Proyectos</a></li>
                         </ul>
                     </form>
