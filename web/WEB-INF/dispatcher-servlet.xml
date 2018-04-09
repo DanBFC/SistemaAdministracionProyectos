@@ -41,10 +41,6 @@
           p:prefix="/WEB-INF/jsp/"
           p:suffix=".jsp" />
     
-    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-        <property name="cacheSeconds" value="0" />
-    </bean>
-
     <!--
     The index controller.
     -->
