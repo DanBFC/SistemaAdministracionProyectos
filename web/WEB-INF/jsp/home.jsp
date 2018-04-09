@@ -50,9 +50,9 @@
                 <sec:authorize access="hasRole('ROLE_ADMINISTRADOR')">
                     <div id="top1">
                         <p class="titulos">Usuario</p>
-                        <form>
+                        <form action="/SistemaAdministracionProyectos/home/buscaUsuario">
                             <ul>
-                                <li>Bucar un Usuario <input type="text" name="firstname"></li>
+                                <li>Bucar un Usuario <input type="text" name="buscname"></li>
                                 <sec:authorize access="hasRole('ROLE_ADMINISTRADOR')">
                                     <li><a class="nav-link" 
                                            href="/SistemaAdministracionProyectos/home/agregarUsuario">Agregar usuario

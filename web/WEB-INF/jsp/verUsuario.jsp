@@ -1,3 +1,9 @@
+<%-- 
+    Document   : verUsuario
+    Created on : 9/04/2018, 04:51:56 AM
+    Author     : daniel
+--%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>

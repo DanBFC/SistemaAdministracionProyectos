@@ -88,4 +88,14 @@ public class UsuarioController{
         
         return new ModelAndView("verUsuario",model);   
     }
+    
+    @RequestMapping(value="home/buscaUsuario", method = RequestMethod.GET)
+    public ModelAndView PantallaBuscProyect(HttpServletRequest request,ModelMap model){
+        String nombre = request.getParameter("buscname");      
+        System.err.println("==============nombre: " + nombre + " :nombre===============");
+        UserModel usuarioDB = new UserModel();
+        Usuario u = usuarioDB.buscarUsuarioID(Integer.parseInt(nombre));  
+        model.addAttribute("u", u);
+        return new ModelAndView("buscaUsuario", model);   
+    }
  }
