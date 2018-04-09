@@ -59,21 +59,25 @@ public class ProjectModel {
      */
     
     public List<Proyecto> obtenerProyectos(){
-        List<Proyecto> lst = new ArrayList<>();
-        Session sesion = sessionFactory.openSession();
-        
-        try {
-            sesion.beginTransaction();
-            lst = sesion.createCriteria(Proyecto.class).list();
-            sesion.getTransaction().commit();
-        } catch (Exception e) {
-            sesion.getTransaction().rollback();
-            return null;
-        }finally{
-            sesion.close();
-        }
-        
-        return lst;
+       List<Proyecto> result= null;
+        Session session = sessionFactory.openSession();
+        Transaction tx=null;
+        try{
+        tx=session.beginTransaction();
+        String hql= "FROM Proyecto";
+        Query query =session.createQuery(hql);
+        result=(List<Proyecto>)query.list();
+        tx.commit();
+        }catch (Exception e){
+                if(tx != null){
+                tx.rollback();
+                }
+                e.printStackTrace();
+                
+                }finally{
+                        session.close();
+                        }
+                return result;
     }
     
     /**

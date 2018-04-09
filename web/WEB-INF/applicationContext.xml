@@ -51,6 +51,7 @@
     
     <!-- Se agregan estos frijoles para ser inyectados en los controladores -->
     <bean id="UserModel" class="model.UserModel" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory" />
+    <bean id="ProjectModel" class="model.ProjectModel" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory" />
     
      <!-- SpringSecurity-->
     <security:http pattern="/css/*" security="none"/>

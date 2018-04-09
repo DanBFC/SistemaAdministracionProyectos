@@ -26,9 +26,8 @@
 	<div id="top">
     	<div id="top2">
         <p class="titulos">Agregar Proyecto</p>
-        <form>
+        <form action="/SistemaAdministracionProyectos/home/agregarProyectoBoton">
         <ul>
-        <li>ID: <input type="text" name="id"></li>
         <li>Nombre: <input type="text" name="nombre"></li>
         <li>Cliente: <input type="text" name="cliente"></li>
         <li>Fecha de Inicio:<input type="date" name="inicio"></li>

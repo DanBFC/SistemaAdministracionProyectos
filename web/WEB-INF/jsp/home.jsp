@@ -32,16 +32,16 @@
                 <sec:authorize access="hasRole('ROLE_ADMINISTRADOR')">
                     <div id="top1">
                         <p class="titulos">Proyecto</p>
-                        <form>
+                        <form action="/SistemaAdministracionProyectos/home/buscProyecto">
                             <ul>
-                                <li>Buscar un Proyecto <input type="text" name="firstname"></li>
+                                <li>Buscar un Proyecto <input type="text" name="buscname"></li>
 
                                         <li><a class="nav-link" 
                                                href="/SistemaAdministracionProyectos/home/agregarProyecto">Agregar proyecto
                                             </a>
                                         </li>
 
-                                <li><a href="busqueda.jsp">Ver todos los Proyectos</a></li>
+                                <li><a href="/SistemaAdministracionProyectos/home/verProyecto">Ver todos los Proyectos</a></li>
                             </ul>
                         </form>
                     </div>

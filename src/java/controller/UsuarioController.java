@@ -50,9 +50,5 @@ public class UsuarioController{
     public String PantallaAgregarUsuario(){
         return "agregarUsuario";
     }
-        
-    @RequestMapping(value="home/agregarProyecto", method = RequestMethod.GET)
-    public String PantallaAgregarProyect(){
-        return "agregarProyecto";
-    }
+
  }
