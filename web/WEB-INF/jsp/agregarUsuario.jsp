@@ -27,14 +27,20 @@
             <div id="top">
                 <div id="top2">
                     <p class="titulos">Registro</p>
-                    <form>
+                    <form action="agregarUsuario" method="post" onsubmit="return validar(this)">
                         <ul>
-                            <li>ID: <input type="text" name="id"></li>
-                            <li>Nombre: <input type="text" name="nombre"></li>
-                            <li>Contraseña:<input type="text" name="password"></li>
+                            <li>Nombre: <input type="text" name="nombre" 
+                                               required
+                                               oninvalid="this.setCustomValidity('Llena este campo')" 
+                                               oninput="setCustomValidity('')"></li>
+                            <li>Contraseña:<input type="text" name="password"
+                                                  required
+                                                  oninvalid="this.setCustomValidity('Llena este campo')" 
+                                                  oninput="setCustomValidity('')"
+                                                  ></li>
                             <li>Rol: <input type="radio" name="rol" value="usuario" checked> Usuario <input type="radio" name="rol" value="analista"> Analista <input type="radio" name="rol" value="admin"> Administrador</li>
 
-                            </ul>
+                        </ul>
                     <input type="submit" value="Agregar">
                     </form>
                 </div>
