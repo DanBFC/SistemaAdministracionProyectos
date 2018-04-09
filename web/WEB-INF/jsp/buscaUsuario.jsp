@@ -22,7 +22,11 @@
 <nav class="menu">
 
 	<ul>
-	<li>Cerrar Sesion</li>
+            <li>
+                <a class="nav-link" 
+                   accesskey=""href = "/SistemaAdministracionProyectos/home/salir">Cerrar sesion
+                </a>
+            </li>
 	</ul></nav>
 		
 	</header><!-- .header-->
