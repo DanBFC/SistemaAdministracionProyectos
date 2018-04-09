@@ -58,6 +58,10 @@
                                            href="/SistemaAdministracionProyectos/home/agregarUsuario">Agregar usuario
                                         </a>
                                     </li>
+                                    <li><a class="nav-link"
+                                           href="/SistemaAdministracionProyectos/home/verUsuarios">Ver todos los Proyectos
+                                        </a>
+                                    </li>
                                 </sec:authorize>
                             </ul>
                         </form>
